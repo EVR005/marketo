@@ -26,7 +26,7 @@ const LandingPage = () => {
   }, []);
   return (
     <>
-      <div className="grid grid-rows-12">
+      <div className="grid grid-rows-12 bg-black">
         <div className="flex items-end justify-end row-span-1">
           <label>Choose locale : </label>
           <select onChange={onChange}>
