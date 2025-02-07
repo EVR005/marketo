@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const GetMarketoLandingPageDetails = async () => {
+export const GetMarketoLandingPageDetails = async (opco: string) => {
   const marketoLandingPageDetails = await axios.get(
-    `/graphql/execute.json/aem_headless_multi_language/GetMarketoLandingPageDetails`
+    `/graphql/execute.json/aem_headless_multi_language/GetMarketoLandingPageDetails;opco=${opco}`
   );
   console.log(marketoLandingPageDetails);
   return marketoLandingPageDetails.data.data.mpgMarketoLandingPageList.items[0];

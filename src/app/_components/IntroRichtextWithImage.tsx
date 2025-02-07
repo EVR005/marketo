@@ -1,5 +1,5 @@
 import { IntroRichtextWithImageType } from "../component_types/component_types";
-import styles from "../TAM-LP/styles.module.css";
+import styles from "../v2/styles.module.css";
 
 export const IntroRichtextWithImage = ({
   IntroRichTextWithImageDetails,
