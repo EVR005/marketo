@@ -10,7 +10,7 @@ import { Footer } from "../../_components/Footer";
 import { IntroRichtext } from "../../_components/IntroRichtext";
 import { MarketoLandingPageDetailsType1 } from "../../component_types/component_types";
 import { Skeleton } from "src/components/ui/skeleton";
-import { useParams } from "next/navigation";
+import { useParams, redirect } from "next/navigation";
 import { Params } from "next/dist/server/request/params";
 
 const Page = () => {
@@ -26,6 +26,9 @@ const Page = () => {
     const opco = params.opco as string;
     const tempdata: MarketoLandingPageDetailsType1 =
       await GetMarketoLandingPageDetails(opco);
+    if (Object.keys(tempdata).length === 0) {
+      redirect("/pagenotfound");
+    }
     console.log(tempdata);
     setMarketoLandingPageDetails(tempdata);
     setIsLoading(false);

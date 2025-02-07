@@ -12,7 +12,7 @@ import { InfoSection } from "../../_components/InfoSection";
 import { ContactUsCard } from "../../_components/ContactUsCard";
 import { FooterLoaded } from "../../_components/FooterLoaded";
 import { Skeleton } from "src/components/ui/skeleton";
-import { useParams } from "next/navigation";
+import { redirect, useParams } from "next/navigation";
 import { Params } from "next/dist/server/request/params";
 
 const Page = () => {
@@ -27,7 +27,10 @@ const Page = () => {
     const opco = params?.opco as string;
     const tempdata: MarketoLandingPageDetailsType2 =
       await GetMarketoLandingPageDetails(opco);
-    console.log(tempdata);
+    console.log(tempdata, "hii");
+    if (Object.keys(tempdata).length === 0) {
+      redirect("/pagenotfound");
+    }
     setMarketoLandingPageDetails(tempdata);
     setIsLoading(false);
   };
