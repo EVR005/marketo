@@ -1,7 +1,5 @@
 "use client";
 
-import Error from "next/error";
-
 export default function Page() {
   return (
     <div className="bg-gradient-to-r from-red-700 to-fuchsia-500 flex items-center justify-center h-screen">
