@@ -4,6 +4,7 @@ export default function Home() {
   const links = [
     { linkName: "MPG", linkURL: "/v1/mpg" },
     { linkName: "VWS", linkURL: "/v2/vws" },
+    { linkName: "DFS", linkURL: "/v1/dfs" },
   ];
 
   return (
