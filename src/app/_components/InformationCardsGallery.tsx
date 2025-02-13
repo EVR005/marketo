@@ -7,7 +7,7 @@ export const InformationCardsGallery = ({
   informationCardsDetails: InformationCardType[];
 }) => {
   return (
-    <div className="flex flex-wrap items-center justify-center mx-5 gap-12 mt-36 text-center">
+    <div className="flex flex-wrap items-center justify-center mx-5 gap-12 mt-24 text-center bg-blue-50 py-12">
       {informationCardsDetails &&
         informationCardsDetails.map(
           (informationCardDetails: InformationCardType, infoKey: number) => {

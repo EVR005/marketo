@@ -12,6 +12,7 @@ import { MarketoLandingPageDetailsType1 } from "../../component_types/component_
 import { Skeleton } from "src/components/ui/skeleton";
 import { useParams, redirect } from "next/navigation";
 import { Params } from "next/dist/server/request/params";
+import { HeroBanner } from "src/app/_components/HeroBanner";
 
 const Page = () => {
   const params: Params = useParams();
@@ -48,6 +49,9 @@ const Page = () => {
       {!isLoading && (
         <div>
           <Header HeaderDetails={marketoLandingPageDetails?.header} />
+          <HeroBanner
+            HeroBannerDetails={marketoLandingPageDetails?.heroBanner}
+          />
           <IntroRichtext
             IntroRichTextDetails={marketoLandingPageDetails?.introRichtext}
           />

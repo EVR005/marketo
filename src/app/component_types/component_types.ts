@@ -48,6 +48,7 @@ export interface IntroRichtextType {
 
 export interface MarketoLandingPageDetailsType1 {
   header: HeaderType;
+  heroBanner: HeroBannerType;
   introRichtext: IntroRichtextType;
   informationCards: InformationCardType[];
   mainImageCard: InformationCardType;
@@ -95,4 +96,9 @@ export interface FestivalCardType {
   festivalDate: string;
   festivalName: string;
   picture: Image;
+}
+
+export interface HeroBannerType {
+  bannerImage: Image;
+  heading: Richtext;
 }

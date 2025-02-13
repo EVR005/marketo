@@ -7,7 +7,7 @@ export const IntroRichtextWithImage = ({
   IntroRichTextWithImageDetails: IntroRichtextWithImageType;
 }) => {
   return (
-    <div className="introrichtextwithimage">
+    <div className={styles.introRichtextWithImage}>
       <div className="mt-8">
         <div>
           <img
