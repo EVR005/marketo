@@ -2,9 +2,10 @@ import Link from "next/link";
 
 export default function Home() {
   const links = [
-    { linkName: "MPG", linkURL: "/v1/mpg" },
+    { linkName: "MPG Landing Page 1", linkURL: "/v1/mpglandingpage1" },
+    { linkName: "MPG Landing Page 2", linkURL: "/v1/mpglandingpage2" },
+    { linkName: "MPG Landing Page 3", linkURL: "/v1/mpglandingpage3" },
     { linkName: "VWS", linkURL: "/v2/vws" },
-    { linkName: "DFS", linkURL: "/v1/dfs" },
   ];
 
   return (
