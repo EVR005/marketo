@@ -5,7 +5,7 @@ export const GetMarketoLandingPageDetails = async (opco: string) => {
 
   await fetch(
     `/graphql/execute.json/aem_headless_multi_language/GetOPWTANLPMarketoLandingPageDetails;opco=${opco}`,
-    { next: { revalidate: 0 } }
+    { cache: "no-store", next: { revalidate: 0 } }
   ).then(async (res) => {
     await res.json().then(async (resp) => {
       if (resp.data.opwTanlpMarketoLandingPageList.items.length > 0)
