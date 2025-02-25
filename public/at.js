@@ -9252,7 +9252,7 @@
   });
 
 function sanitizeViewName(viewName) {
-  if (viewName.startsWith("marketo")) {
+  if (viewName.startsWith("https://marketo-evr.vercel.app")) {
     viewName = viewName.substr(1);
   }
   if (viewName.startsWith("/")) {
@@ -9272,19 +9272,18 @@ function triggerView(viewName) {
     console.log("AT: View triggered on page load: " + viewName);
   }
 }
-const url = window.location.href;
-const startStr = "marketo/";
-const startIndex = url.indexOf(startStr);
-const result = url.substring(startIndex);
-const urlArray = result.split("/");
-const pageName = urlArray[2];
-
+const url1 = window.location.href;
+const startStr1 = "https://marketo-evr.vercel.app/";
+const startIndex1 = url1.indexOf(startStr1);
+const result1 = url1.substring(startIndex1);
+const urlArray1 = result1.split("/");
+const pageName1 = urlArray1[5] == undefined ? "" : urlArray1[5];
 //fire triggerView when the SPA loads and when the hash changes in the SPA
-if (window.location.pathname.indexOf("marketo") > -1) {
-  triggerView(pageName);
+if (window.location.href.indexOf("https://marketo-evr.vercel.app") > -1) {
+  triggerView(pageName1);
 }
 window.onhashchange = function () {
-  if (window.location.pathname.indexOf("marketo") > -1) {
-    triggerView(pageName);
+  if (window.location.href.indexOf("https://marketo-evr.vercel.app") > -1) {
+    triggerView(pageName1);
   }
 };
