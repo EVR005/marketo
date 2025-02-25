@@ -67,6 +67,10 @@ const Page = () => {
             CareersDetails={marketoLandingPageDetails?.careersCard}
           />
           <Footer FooterDetails={marketoLandingPageDetails?.footer} />
+          <script
+            src={marketoLandingPageDetails?.marketoFormLaunchScriptUrl}
+            async
+          ></script>
         </div>
       )}
     </>

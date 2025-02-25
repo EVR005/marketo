@@ -47,6 +47,7 @@ export interface IntroRichtextType {
 }
 
 export interface MarketoLandingPageDetailsType1 {
+  marketoFormLaunchScriptUrl: string;
   header: HeaderType;
   heroBanner: HeroBannerType;
   introRichtext: IntroRichtextType;
