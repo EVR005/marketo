@@ -1,16 +1,16 @@
 "use client";
 
-import { Header } from "../../_components/Header";
+import { Header } from "../../../_components/Header";
 import { useEffect, useState } from "react";
 import { GetMarketoLandingPageDetails } from "../APICall";
 import {
   infoSectionType,
   MarketoLandingPageDetailsType2,
-} from "../../component_types/component_types";
-import { IntroRichtextWithImage } from "../../_components/IntroRichtextWithImage";
-import { InfoSection } from "../../_components/InfoSection";
-import { ContactUsCard } from "../../_components/ContactUsCard";
-import { FooterLoaded } from "../../_components/FooterLoaded";
+} from "../../../component_types/component_types";
+import { IntroRichtextWithImage } from "../../../_components/IntroRichtextWithImage";
+import { InfoSection } from "../../../_components/InfoSection";
+import { ContactUsCard } from "../../../_components/ContactUsCard";
+import { FooterLoaded } from "../../../_components/FooterLoaded";
 import { Skeleton } from "src/components/ui/skeleton";
 import { redirect, useParams } from "next/navigation";
 import { Params } from "next/dist/server/request/params";

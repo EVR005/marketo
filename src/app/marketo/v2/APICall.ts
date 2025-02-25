@@ -1,4 +1,4 @@
-import { MarketoLandingPageDetailsType2 } from "../component_types/component_types";
+import { MarketoLandingPageDetailsType2 } from "../../component_types/component_types";
 
 export const GetMarketoLandingPageDetails = async (opco: string) => {
   let response = {} as MarketoLandingPageDetailsType2;

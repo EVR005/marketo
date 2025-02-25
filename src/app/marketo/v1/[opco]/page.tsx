@@ -1,14 +1,14 @@
 "use client";
 
-import { Header } from "../../_components/Header";
+import { Header } from "../../../_components/Header";
 import { useEffect, useState } from "react";
 import { GetMarketoLandingPageDetails } from "../APICall";
-import { InformationCardsGallery } from "../../_components/InformationCardsGallery";
-import { MainImageCard } from "../../_components/MainImageCard";
-import { CareersCard } from "../../_components/CareersCard";
-import { Footer } from "../../_components/Footer";
-import { IntroRichtext } from "../../_components/IntroRichtext";
-import { MarketoLandingPageDetailsType1 } from "../../component_types/component_types";
+import { InformationCardsGallery } from "../../../_components/InformationCardsGallery";
+import { MainImageCard } from "../../../_components/MainImageCard";
+import { CareersCard } from "../../../_components/CareersCard";
+import { Footer } from "../../../_components/Footer";
+import { IntroRichtext } from "../../../_components/IntroRichtext";
+import { MarketoLandingPageDetailsType1 } from "../../../component_types/component_types";
 import { Skeleton } from "src/components/ui/skeleton";
 import { useParams, redirect } from "next/navigation";
 import { Params } from "next/dist/server/request/params";

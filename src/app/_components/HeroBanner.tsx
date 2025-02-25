@@ -1,5 +1,5 @@
 import { HeroBannerType } from "../component_types/component_types";
-import styles from "../v1/styles.module.css";
+import styles from "../marketo/v1/styles.module.css";
 
 export const HeroBanner = ({
   HeroBannerDetails,

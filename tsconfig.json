@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/v1/[opco]"
+    "src/app/marketo/v1/[opco]"
   ],
   "exclude": ["node_modules"]
 }
