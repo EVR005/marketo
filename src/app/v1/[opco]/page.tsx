@@ -16,6 +16,7 @@ import { HeroBanner } from "src/app/_components/HeroBanner";
 
 const Page = () => {
   const params: Params = useParams();
+
   const [marketoLandingPageDetails, setMarketoLandingPageDetails] =
     useState<MarketoLandingPageDetailsType1>(
       {} as MarketoLandingPageDetailsType1
