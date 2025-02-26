@@ -36,9 +36,26 @@ const Page = () => {
     setIsLoading(false);
   };
 
+  const useScript = (url: string) => {
+    useEffect(() => {
+      const script = document.createElement("script");
+
+      script.src = url;
+      script.async = true;
+
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, [url]);
+  };
+
   useEffect(() => {
     LoadData();
   }, []);
+
+  useScript("/at.js");
 
   return (
     <>
@@ -68,6 +85,7 @@ const Page = () => {
             CareersDetails={marketoLandingPageDetails?.careersCard}
           />
           <Footer FooterDetails={marketoLandingPageDetails?.footer} />
+          <div className="mt-12" id="marketoform"></div>
           <script
             src={marketoLandingPageDetails?.marketoFormLaunchScriptUrl}
             async

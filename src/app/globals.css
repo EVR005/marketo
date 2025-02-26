@@ -29,6 +29,10 @@ body {
     font-size: large;
   }
 
+  form {
+    bottom: 0px;
+  }
+
   .introrichtextwithimage {
     h1 {
       color: #000;

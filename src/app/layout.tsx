@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="./at.js" async />
+        <script src="/at.js" async />
+        <script src="/positionMarketoForm.js" async />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" async />
       </head>
       <body
