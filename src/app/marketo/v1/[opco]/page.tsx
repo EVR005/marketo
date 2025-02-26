@@ -36,26 +36,9 @@ const Page = () => {
     setIsLoading(false);
   };
 
-  const useScript = (url: string) => {
-    useEffect(() => {
-      const script = document.createElement("script");
-
-      script.src = url;
-      script.async = true;
-
-      document.body.appendChild(script);
-
-      return () => {
-        document.body.removeChild(script);
-      };
-    }, [url]);
-  };
-
   useEffect(() => {
     LoadData();
   }, []);
-
-  useScript("/at.js");
 
   return (
     <>
