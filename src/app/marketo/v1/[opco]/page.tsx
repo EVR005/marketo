@@ -87,8 +87,8 @@ const Page = () => {
 
                 if (element && targetContainer) {
                   targetContainer.appendChild(element);
+                  element.style.display = "block";
                 }
-                element.style.display = "block";
               }
               moveFormElement("form", "marketoform");
             }}
