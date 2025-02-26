@@ -13,6 +13,7 @@ import { Skeleton } from "src/components/ui/skeleton";
 import { useParams, redirect } from "next/navigation";
 import { Params } from "next/dist/server/request/params";
 import { HeroBanner } from "src/app/_components/HeroBanner";
+import Script from "next/script";
 
 const Page = () => {
   const params: Params = useParams();
@@ -43,8 +44,9 @@ const Page = () => {
   return (
     <>
       {isLoading && (
-        <div>
+        <div id="loading">
           <Skeleton className="w-full h-full" />
+          <div className="mt-12 hidden" id="marketoform"></div>
         </div>
       )}
       {!isLoading && (
@@ -69,10 +71,28 @@ const Page = () => {
           />
           <div className="mt-12" id="marketoform"></div>
           <Footer FooterDetails={marketoLandingPageDetails?.footer} />
-          <script
+          <Script
             src={marketoLandingPageDetails?.marketoFormLaunchScriptUrl}
-            async
-          ></script>
+            strategy="afterInteractive"
+            onLoad={() => {
+              function moveFormElement(
+                tagname: string,
+                targetContainerId: string
+              ) {
+                const element = document.getElementsByTagName(
+                  tagname
+                )[0] as HTMLElement;
+                const targetContainer =
+                  document.getElementById(targetContainerId);
+
+                if (element && targetContainer) {
+                  targetContainer.appendChild(element);
+                }
+                element.style.display = "block";
+              }
+              moveFormElement("form", "marketoform");
+            }}
+          ></Script>
         </div>
       )}
     </>

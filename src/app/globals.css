@@ -30,7 +30,7 @@ body {
   }
 
   form {
-    bottom: 0px;
+    display: none;
   }
 
   .introrichtextwithimage {
