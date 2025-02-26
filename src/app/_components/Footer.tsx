@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = ({ FooterDetails }: { FooterDetails: FooterType }) => {
   return (
-    <div className="grid grid-rows-4 justify-center my-6 gap-y-6">
+    <div className="grid grid-rows-4 justify-center my-6 gap-y-6 bg-blue-50">
       <Link
         href={`${FooterDetails?.logoLinkUrl}`}
         className="row-span-3 flex justify-center"

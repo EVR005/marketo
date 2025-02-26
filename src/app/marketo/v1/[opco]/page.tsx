@@ -67,8 +67,8 @@ const Page = () => {
           <CareersCard
             CareersDetails={marketoLandingPageDetails?.careersCard}
           />
-          <Footer FooterDetails={marketoLandingPageDetails?.footer} />
           <div className="mt-12" id="marketoform"></div>
+          <Footer FooterDetails={marketoLandingPageDetails?.footer} />
           <script
             src={marketoLandingPageDetails?.marketoFormLaunchScriptUrl}
             async

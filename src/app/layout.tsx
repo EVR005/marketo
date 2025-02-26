@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,14 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script src="/at.js" async />
+        <script src="/positionMarketoForm.js" async />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" async />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <Script src="/at.js" strategy="afterInteractive" />
-        <Script src="/positionMarketoForm.js" strategy="afterInteractive" />
       </body>
     </html>
   );
