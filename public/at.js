@@ -9273,17 +9273,85 @@ function triggerView(viewName) {
   }
 }
 const url1 = window.location.href;
-const startStr1 = "https://marketo-evr.vercel.app/";
-const startIndex1 = url1.indexOf(startStr1);
-const result1 = url1.substring(startIndex1);
-const urlArray1 = result1.split("/");
+const urlArray1 = url1.split("/");
 const pageName1 = urlArray1[5] == undefined ? "" : urlArray1[5];
 //fire triggerView when the SPA loads and when the hash changes in the SPA
-if (window.location.href.indexOf("https://marketo-evr.vercel.app") > -1) {
+if (pageName1 == "") {
   triggerView(pageName1);
 }
+
+(function () {
+  // Store original history methods
+  const originalPushState = history.pushState;
+  const originalReplaceState = history.replaceState;
+
+  // Override pushState
+  history.pushState = function (state, title, url) {
+    originalPushState.apply(history, arguments);
+    window.dispatchEvent(
+      new CustomEvent("urlchange", {
+        detail: {
+          url: window.location.href,
+          state: state,
+        },
+      })
+    );
+  };
+
+  // Override replaceState
+  history.replaceState = function (state, title, url) {
+    originalReplaceState.apply(history, arguments);
+    window.dispatchEvent(
+      new CustomEvent("urlchange", {
+        detail: {
+          url: window.location.href,
+          state: state,
+        },
+      })
+    );
+  };
+
+  // Listen to popstate events (back/forward navigation)
+  window.addEventListener("popstate", function () {
+    window.dispatchEvent(
+      new CustomEvent("urlchange", {
+        detail: {
+          url: window.location.href,
+          state: history.state,
+        },
+      })
+    );
+  });
+
+  // Listen to hashchange events (for older browser compatibility)
+  window.addEventListener("hashchange", function () {
+    window.dispatchEvent(
+      new CustomEvent("urlchange", {
+        detail: {
+          url: window.location.href,
+          state: history.state,
+        },
+      })
+    );
+  });
+})();
+
+// Usage example
+window.addEventListener("urlchange", function (e) {
+  console.log("URL changed to:", e.detail.url);
+  console.log("State:", e.detail.state);
+
+  const url1 = window.location.href;
+  const urlArray1 = url1.split("/");
+  const pageName1 = urlArray1[5] == undefined ? "" : urlArray1[5];
+
+  if (window.location.href.indexOf("marketo") > -1) {
+    triggerView(pageName1);
+  }
+});
+
 window.onhashchange = function () {
-  if (window.location.href.indexOf("https://marketo-evr.vercel.app") > -1) {
+  if (window.location.href.indexOf("marketo") > -1) {
     triggerView(pageName1);
   }
 };
