@@ -5,6 +5,10 @@ export default function Home() {
     { linkName: "MPG LP 1", linkURL: "/marketo/v1/mpglandingpage1" },
     { linkName: "MPG LP 2", linkURL: "/marketo/v1/mpglandingpage2" },
     { linkName: "MPG LP 3", linkURL: "/marketo/v1/mpglandingpage3" },
+    { linkName: "MPG LP 4", linkURL: "/marketo/v1/mpglandingpage4" },
+    { linkName: "MPG LP 4", linkURL: "/marketo/v1/mpglandingpage5" },
+    { linkName: "MPG LP 4", linkURL: "/marketo/v1/mpglandingpage6" },
+    { linkName: "MPG LP 4", linkURL: "/marketo/v1/mpglandingpage7" },
     { linkName: "VWS", linkURL: "/marketo/v2/vws" },
   ];
 
